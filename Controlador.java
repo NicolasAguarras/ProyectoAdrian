@@ -22,12 +22,15 @@ public static ArrayList<Pelicula> peliculas(){
 		try {
 			linea = br.readLine();
 			while (linea!=null) {
+				int contador = 0;
 				String  [] pelicula = linea.split(";");
 				String [] actores = linea.split(",");
 				Pelicula peli = new Pelicula (Integer.parseInt(pelicula[0]), pelicula[1],Integer.parseInt(pelicula[2]),Integer.parseInt(pelicula[3]), 
 						pelicula[4].replace(" " , "").toLowerCase(), pelicula[5], pelicula[6], actores );
 				peliculas.add(peli);
 				linea = br.readLine();
+				contador++;
+				System.out.println("Linea nº: " + contador);
 			}
 	
 			
